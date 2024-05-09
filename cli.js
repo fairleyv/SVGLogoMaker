@@ -4,6 +4,8 @@ const inquirer = require('inquirer');
 const Circle = require('./lib/circle');
 const Square = require('./lib/square');
 const Triangle = require('./lib/triangle');
+// import color-string for validation
+const colorString = require('color-string');
 // TODO import fs
 const { writeFile } = require('fs/promises');
 
@@ -12,6 +14,13 @@ const { writeFile } = require('fs/promises');
 function createLogo (svg) {
     writeFile('logo.svg', svg);
     console.log('Logo generation successful!')
+}
+
+function isColorKeyword (color) {
+    const tempColor = color.toLowerCase()
+    const colorObject = colorString.get(tempColor);
+    console.log(!!colorObject);
+    return !!colorObject;
 }
 
 
@@ -28,19 +37,16 @@ const questions = [
     type: 'input',
     name: 'shapeColor',
     message: 'Please input shape color. Must be either a valid color keyword or hexadecimal code',
-    // validate: function (shapeColor) {
-    //     let s = new Option().style;
-    //     s.color = shapeColor.toLowerCase();
-    //     let test1 = s.color == shapeColor.toLowerCase();
-    //     let valid = /^#?([a-f0-9]{6}|[a-f0-9]{3})$/.test(shapeColor);
+    validate: function (shapeColor) {
+        let test1 = isColorKeyword(shapeColor);
+        let valid = /^#?([a-f0-9]{6}|[a-f0-9]{3})$/.test(shapeColor);
 
-    //     if (valid || test1) {
-    //         return true;
-    //     } else {
-    //         console.log('Input must be either a valid color keyword or hexadecimal code');
-    //         return false;
-    //     }
-    // }
+        if (valid || test1) {
+            return true;
+        }
+        console.log('Input must be either a valid color keyword or hexadecimal code');
+        return false;
+    }
 },
 {
     type: 'input',
@@ -59,19 +65,15 @@ const questions = [
     type: 'input',
     name: 'textColor',
     message: 'Please input text color. Must be either a valid color keyword or hexadecimal code',
-    // validate: function (textColor) {
-    //     let s = new Option().style;
-    //     s.color = textColor.toLowerCase();
-    //     let test1 = s.color == textColor.toLowerCase();
-    //     let valid = /^#?([a-f0-9]{6}|[a-f0-9]{3})$/.test(textColor);
+    validate: function (shapeColor) {
+        let test1 = isColorKeyword(shapeColor);
+        let valid = /^#?([a-f0-9]{6}|[a-f0-9]{3})$/.test(shapeColor);
 
-    //     if (valid || test1) {
-    //         return true;
-    //     } else {
-    //         console.log('Input must be either a valid color keyword or hexadecimal code');
-    //         return false;
-    //     }
-    // }
+        if (valid || test1) {
+            return true;
+        }
+        console.log('Input must be either a valid color keyword or hexadecimal code');
+        return false;
 }];
 
 const CLI = (() => inquirer
