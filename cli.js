@@ -74,6 +74,7 @@ const questions = [
         }
         console.log('Input must be either a valid color keyword or hexadecimal code');
         return false;
+    }
 }];
 
 const CLI = (() => inquirer
