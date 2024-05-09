@@ -30,6 +30,7 @@ type 'npm i' into the terminal of the root directory. This will install all depe
 ## Usage 
 
 Type 'npm start' into the terminal. This will begin the prompted questions. After answering all of the prompted questions your logo will be generated. 
+[Untitled_ May 9, 2024 3_59 PM.webm](https://github.com/fairleyv/SVGLogoMaker/assets/126346803/e9c4d867-3f93-4c3f-ab5c-0922050ab00a)
 
 ## Credits 
 
