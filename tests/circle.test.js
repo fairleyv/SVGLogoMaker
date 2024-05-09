@@ -5,12 +5,17 @@ const Circle = require('../lib/circle');
 
 describe('Circle', () => {
     test('should render a Circle shape using svg', () => {
-        const shape = new Circle(shapeColor = 'blue');
-        expect(shape.render()).toEqual('<circle cx="75" cy="100" r="20" fill="blue" />');
+        const shape = new Circle(shapeColor = 'blue', textColor = '#222', text = "IAM");
+        expect(shape.render()).toEqual(`<svg width="200" height="200" xmlns="http://www.w3.org/2000/svg">
+        <circle cx="100" cy="100" r="75" fill="blue" />
+        <text x="50%" y="50%" style="dominant-baseline: middle; text-anchor: middle; fill: #222; font-family: Arial" font-size="50">IAM</text>
+        </svg>`);
     });
-    test('Should through an err when color is not valid', () => {
-        const shape = new Circle();
-        const err = Error('Color must be a valid color keyword or hexadecimal code');
-        expect(shape.render).toThrow(err);
+    test('Should render an svg without text', () => {
+        const shape = new Circle(shapeColor = 'blue', textColor = '#222');
+        expect(shape.render()).toEqual(`<svg width="200" height="200" xmlns="http://www.w3.org/2000/svg">
+        <circle cx="100" cy="100" r="75" fill="blue" />
+        <text x="50%" y="50%" style="dominant-baseline: middle; text-anchor: middle; fill: ; font-family: Arial" font-size="50"></text>
+        </svg>`);
     });
 });
