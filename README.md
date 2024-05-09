@@ -1,10 +1,10 @@
 [![License](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
-# SQL Employee Tracker 
+# SVG Logo Maker 
 
 ## Description 
 
-	 This application is a database management system based in the console. The application will allow the user to connect to an employee database that can be modified through the console via a series of questions.  
+	 This is an in console application that allows you to create simple svg logos by answering the provided questions. Once all questions are answered, the application will create a file labled logo.svg according to the provided specifications. 
 
 ## Table of Contents
 
@@ -25,19 +25,15 @@
   [Questions](#questions)
 ## Installation
 
-Installation requires an npm download of the dependencies listed in the package.json file. After the dependencies have been downloaded, the schema.sql file must be run to create the database and required tables. After this the db variable in the inquirer.js file must be updated with the user's MySQL username and MySql Password.  
+type 'npm i' into the terminal of the root directory. This will install all dependencies necessary to run the application. 
 
 ## Usage 
 
-1. Type "npm start" into the terminal in order to begin running the program. 
-
-2. Once the program is running you can choose which option you'd like to modify the employee database. 
-
-3. Once finished with your modifications you can choose the quit option which will exit the program.  
+Type 'npm start' into the terminal. This will begin the prompted questions. After answering all of the prompted questions your logo will be generated. 
 
 ## Credits 
 
-N/A 
+n/a 
 
 ## License 
 
@@ -45,16 +41,16 @@ This project is covered under the MIT license.
  
 ## Contributions 
 
-You may email me or message me at my github with questions on how to contribute. 
+You can email me or message me at my github provided below. 
 
 ## Tests 
 
-N/A
+n/a
 
 ## Questions 
 
 For any questions regarding this project please contact me at my -
 
-GitHub: [Fairleyv](https://github.com/Fairleyv) 
+GitHub: [fairleyv](https://github.com/fairleyv) 
 
 Email: fairleyvincent@gmail.com
