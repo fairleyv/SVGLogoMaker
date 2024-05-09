@@ -1,5 +1,5 @@
 // Import shapes class
-const Shapes = require('../lib/shapes.js');
+const Shapes = require('../lib/shapeConstructor');
 
 // test if render throws an error when called on shapes instead of child
 describe('Shape', () => {
